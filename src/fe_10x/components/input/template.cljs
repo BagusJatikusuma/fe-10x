@@ -4,9 +4,9 @@
 (defn rand-str [len]
   (apply str (take len (repeatedly #(char (+ (rand 26) 65))))))
 
-(defn label [{:keys [labl value type evnt]}]
+(defn label [_]
   (let [rand (rand-str 20)]
-    (fn [{:keys [labl type]}]
+    (fn [{:keys [labl value type evnt]}]
       (println value)
       [:div {:class "slds-form-element"}
        [:label {:class "slds-form-element__label"
